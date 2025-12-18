@@ -1,18 +1,19 @@
-from location_error_computional_complexity.data import echo
-# This is a sample Python script.
+import argparse
+from location_error_computional_complexity.data import loader
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+classification_results = f'resources/location_error_prediction_CLASSIFICATION_20211004_230611_main'
+regression_results = f'resources/location_error_prediction_REGRESSION_20211004_230611_main'
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    echo()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--classification", type=str, help='Absolute path to classification directory')
+    parser.add_argument("--regression", type=str, help='Absolute path to regression directory')
+    opt = parser.parse_args()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # if opt.regression is not None:
+    #     loader.build_stat(opt.regression)
+    #
+    # if opt.classification is not None:
+    #     loader.build_stat(opt.classification)
+
+    loader.build_stat(regression_results)

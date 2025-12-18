@@ -1,14 +1,14 @@
-[project]
+[tool.poetry]
 name = "location-error-computional-complexity"
 version = "0.1.0"
 description = ""
-authors = [{name = "przemekwrona",email = "przemekwrona25@gmail.com"}]
+authors = ["Author Anonymous <author@anonymous.com>"]
 readme = "README.md"
-requires-python = ">=3.8"
 
 
-dependencies = [
-]
+[tool.poetry.dependencies]
+python = "3.9.23"
+pandas = "^2.1.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
